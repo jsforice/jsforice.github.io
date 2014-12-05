@@ -2,8 +2,8 @@
 title: Js for rice blog
 email: clgt@clgt.vn
 description: > # Welcome to my blog.
-baseurl: "/blog/" # the subpath of your site, e.g. /blog/
-url: "http://jsforice.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
