@@ -1023,8 +1023,12 @@ jQuery(document).ready(function($) {
             },
             function() {
                 var currentTop = $(window).scrollTop();
+
+                if(currentTop <= 0) {
+                    $('.navbar-custom').addClass('is-visible is-fixed');
+                }
                 //check if user is scrolling up
-                if (currentTop < this.previousTop) {
+                else if (currentTop < this.previousTop) {
                     //if scrolling up...
                     if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
                         $('.navbar-custom').addClass('is-visible');
