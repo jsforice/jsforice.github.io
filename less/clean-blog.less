@@ -173,19 +173,6 @@ hr.small {
 		}
 	}
 
-	&.post {
-		.site-heading,
-		.post-heading,
-		.page-heading {
-			padding: 50px 0 0;
-			color: #404040;
-
-			@media only screen and (min-width: 768px) {
-				padding: 50px 0 0;
-			}		
-		}
-	}
-
 	.site-heading,
 	.page-heading {
 		text-align: center;
@@ -237,6 +224,27 @@ hr.small {
 			}
 			.subheading {
 				font-size: 30px;
+			}
+		}
+	}
+
+	&.post {
+		.site-heading,
+		.post-heading,
+		.page-heading {
+			padding: 50px 0 0;
+			color: #404040;
+
+			@media only screen and (min-width: 768px) {
+				padding: 50px 0 0;
+			}		
+		}
+
+		.post-heading {
+			.meta {
+				a {
+					background-color: #428bca;
+				}
 			}
 		}
 	}

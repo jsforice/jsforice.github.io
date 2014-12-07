@@ -150,19 +150,6 @@ hr.small {
     padding: 150px 0;
   }
 }
-.intro-header.post .site-heading,
-.intro-header.post .post-heading,
-.intro-header.post .page-heading {
-  padding: 50px 0 0;
-  color: #404040;
-}
-@media only screen and (min-width: 768px) {
-  .intro-header.post .site-heading,
-  .intro-header.post .post-heading,
-  .intro-header.post .page-heading {
-    padding: 50px 0 0;
-  }
-}
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
@@ -217,6 +204,22 @@ hr.small {
   .intro-header .post-heading .subheading {
     font-size: 30px;
   }
+}
+.intro-header.post .site-heading,
+.intro-header.post .post-heading,
+.intro-header.post .page-heading {
+  padding: 50px 0 0;
+  color: #404040;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header.post .site-heading,
+  .intro-header.post .post-heading,
+  .intro-header.post .page-heading {
+    padding: 50px 0 0;
+  }
+}
+.intro-header.post .post-heading .meta a {
+  background-color: #428bca;
 }
 .post-preview > a {
   color: #404040;

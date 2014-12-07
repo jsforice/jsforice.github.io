@@ -1,12 +1,12 @@
 # Site settings
 title: Ninja Sài gòn
 email: clgt@clgt.vn
-description: "Write your site description here. It will be used as your sites meta description as well!"
+description: "Make your code cleaning"
 baseurl: ""
 url: "http://yourdomain.com"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
+twitter_username: _mat_mun_
+github_username:  vntrace
+facebook_username:  dunghackem
 
 # Build settings
 markdown: kramdown
