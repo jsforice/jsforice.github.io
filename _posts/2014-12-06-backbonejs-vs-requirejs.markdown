@@ -7,37 +7,37 @@ author:     "Mặt Mụn"
 level:		"Chunin"
 ---
 
-<p>Như hướng dẫn lần trước chúng ta đã có thể xây dựng được todo app đơn giản chỉ sử dụng backbonejs</p>
+<p>Như hướng dẫn lần trước chúng ta đã có thể xây dựng được todo app đơn giản chỉ sử dụng backbonejs.<br/> Hầu hết các đối tượng như model, view, collection đều được khai báo thông qua một file javascript duy nhất (main.js), đối với 1 todo app nhỏ thì nhiêu đây là đủ.</p>
+<p>Nhưng giả sử bạn có một app với mức độ phức tạp hơn, phải chia ra từng module nhỏ, mỗi module lại có thể chia sẽ model, collection cho các module khác.</p>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+Ví dụ giờ nếu todo app của chúng ta yêu cầu phải login để vào app, vậy chúng ta sẽ có 1 page #login, 1 page #todo.
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+Một số resource sẽ được sử dụng như: 
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+- page #login: UserModel, LoginView
+- page #todo: UserModel, TodoModel, TodoView, TodoCollection, ...
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+Ở đây mình sẽ không defined toàn bộ resource vào 1 file js nữa, mà mình sẽ chia ra từng file js nhỏ như: user_model.js, login_view.js, ....
 
-<h2 class="section-heading">The Final Frontier</h2>
+Đối với page #login mình sẽ include từng resource cần thiết vào như sau:
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+{% highlight javascript linenos %}
+<script src="js/jquery.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/user_model.js"></script>
+<script src="js/login_view.js"></script>
+<script src="js/main.js"></script>
+{% endhighlight %}
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+Mình vẫn thực hiện tương tự đối với page #todo.
+Ở đây mình vẫn phải chú ý thứ tự các script load sao cho đúng (thiệt là mệt).
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+Nếu chúng ta sử dụng requirejs thì có khá hơn được tí tẹo nào hem ???
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+Kq: nếu sử dụng requirejs thì trong file html của chúng ta chỉ cần include script như thế này là đủ:
+{% highlight javascript linenos %}
+<script data-main="main" src="js/requirejs.js"></script>
+{% endhighlight %}
 
-<h2 class="section-heading">Reaching for the Stars</h2>
-
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-<a href="#">
-    <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
-</a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+WTF ?
