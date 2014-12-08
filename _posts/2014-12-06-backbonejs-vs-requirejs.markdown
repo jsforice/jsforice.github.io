@@ -21,7 +21,7 @@ Một số resource sẽ được sử dụng như:
 
 Đối với page #login mình sẽ include từng resource cần thiết vào như sau:
 
-{% highlight javascript linenos %}
+{% highlight html linenos %}
 <script src="js/jquery.js"></script>
 <script src="js/underscore.js"></script>
 <script src="js/backbone.js"></script>
@@ -36,8 +36,27 @@ Mình vẫn thực hiện tương tự đối với page #todo.
 Nếu chúng ta sử dụng requirejs thì có khá hơn được tí tẹo nào hem ???
 
 Kq: nếu sử dụng requirejs thì trong file html của chúng ta chỉ cần include script như thế này là đủ:
-{% highlight javascript linenos %}
+{% highlight html linenos %}
 <script data-main="main" src="js/requirejs.js"></script>
 {% endhighlight %}
 
 WTF ?
+
+<script <b>data-main="js/main"</b> src="js/requirejs.js"></script>
+
+Requirejs sẽ tự động load script js/main.js
+
+{% highlight javascript linenos %}
+// Require main app viewer
+require([
+	'js/jquery',
+	'js/backbone',
+	'js/underscore',
+	'js/user_model',
+	'js/login_view'
+], function($, Backbone, _, UserModel, LoginView){
+	// New loign view instance
+	var loginView = new LoginView({el: '#todo'});
+		loginView.render(); // Render login view
+});
+{% endhighlight %}
