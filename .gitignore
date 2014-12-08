@@ -1,2 +1,6 @@
 _site
+<<<<<<< HEAD
+node_modules
+=======
 .sass-cache
+>>>>>>> 92525e0d9d997ce13376592b28c245c084ca1219
