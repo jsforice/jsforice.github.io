@@ -5,9 +5,9 @@ description: "Make your code cleaning"
 keywords: "ninja saigon, nodejs, backbonejs, requirejs, sass, angularjs, reactjs, hướng dẫn, lập trình, cơ bản"
 baseurl: ""
 url: "http://yourdomain.com"
-twitter_username: _mat_mun_
-github_username:  vntrace
-facebook_username:  dunghackem
+twitter_username: ninja-saigon
+github_username:  ninja-saigon
+facebook_username:  ninja-saigon
 
 # Build settings
 markdown: kramdown
