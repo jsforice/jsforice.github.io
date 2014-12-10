@@ -23,21 +23,7 @@ Về phần đối số tiếp theo, thì *fun.call* sẽ truyền các tham s�
 Ví dụ:
 
 # fun.call
-{% highlight javascript %}
-var persons = [
-	{name: "Anddy", age: 12},
-	{name: "Boob", age: 18}
-];
-
-for(var i = 0; i < persons.length; i++) {
-	
-	(function(say, hello){
-		// Say hi to them
-		console.log(say + hello + this.name);
-	
-	}).call(persons[i], "You said: ", "Hello ");
-}
-{% endhighlight %}
+<script src="https://gist.github.com/ninja-saigon/c98448dee975cbd1202d.js"></script>
 
 #fun.apply
 {% highlight javascript %}
